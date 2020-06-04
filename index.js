@@ -28,7 +28,7 @@ function createPayload(type, data) {
 
 class OverlayWS {
   constructor() {
-    this.wss = new WebSocket.Server({ port: 9123 });
+    this.wss = new WebSocket.Server({ port: process.env.PORT || 9123 });
 
     this.wss.on("connection", (ws) => {
       console.log("connection");

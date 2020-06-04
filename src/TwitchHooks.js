@@ -50,6 +50,10 @@ module.exports = class TwitchHooks {
     this.app.use(express.json()) // for parsing application/json
     this.app.use(morgan("combined"));
 
+    this.app.get('/alive', (req, res) => {
+      res.send('This is working!');
+    });
+
     this.app.get("/twitch-hooks/hook/*", (req, res) => {
       if (req.query["hub.challenge"]) {
         // TODO: Need to verify this hub.challange
@@ -75,7 +79,7 @@ module.exports = class TwitchHooks {
       res.sendStatus(200);
     });
 
-    this.app.listen(80, () => {
+    this.app.listen(process.env.PORT || 80, () => {
       console.log("TwitchHooks has started!");
     });
   }

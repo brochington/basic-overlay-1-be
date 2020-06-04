@@ -1,11 +1,12 @@
 {
-  "name": "twitch-web-hooks",
+  "name": "basic-overlay-1-be",
   "version": "0.0.1",
-  "description": "Just some crap to test Twitch Webooks",
+  "description": "Backend for OBS twitch basic-overlay-1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./index.js"
+    "dev": "node ./index.js",
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
