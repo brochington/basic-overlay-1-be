@@ -79,9 +79,9 @@ module.exports = class TwitchHooks {
       res.sendStatus(200);
     });
 
-    this.app.listen(process.env.PORT || 80, () => {
-      console.log("TwitchHooks has started!");
-    });
+    // this.app.listen(process.env.PORT || 80, () => {
+    //   console.log("TwitchHooks has started!");
+    // });
   }
 
   getSecret(topic) {

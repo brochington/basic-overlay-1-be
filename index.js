@@ -28,7 +28,10 @@ function createPayload(type, data) {
 
 class OverlayWS {
   constructor() {
-    this.wss = new WebSocket.Server({ port: process.env.PORT || 9123 });
+    let server = require("http").createServer();
+    this.wss = new WebSocket.Server({ server });
+
+    server.on('request', hooks.app);
 
     this.wss.on("connection", (ws) => {
       console.log("connection");
@@ -42,6 +45,10 @@ class OverlayWS {
 
       // Send connection confirmation
       ws.send(JSON.stringify({ type: 'connection', data: 'connected' }));
+    });
+
+    server.listen(process.env.PORT, function () {
+      console.log(`http/ws server listening on ${process.env.PORT}`);
     });
   }
 }
