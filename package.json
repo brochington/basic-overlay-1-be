@@ -16,7 +16,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.0",
     "qs": "^6.9.4",
-    "ws": "^7.3.0"
+    "ws": "^7.4.6"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.1",
